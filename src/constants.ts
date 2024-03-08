@@ -1,0 +1,2 @@
+export const DEFAULT_TERMINAL_WIDTH = 80;
+export const DEFAULT_TERMINAL_HEIGHT = 24;
