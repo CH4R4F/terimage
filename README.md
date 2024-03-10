@@ -24,30 +24,16 @@ npm install terimage
 Import the Terimage class in your Node.js script:
 
 ``` javascript
-import Terimage from 'terimage';
-```
+import Terimage from "terimage";
+import fs from "fs";
 
-Create a new Terimage instance:
-
-``` javascript
 const terimage = new Terimage();
-```
 
-Provide the image buffer and optional resize options to the `image` method:
+const image = fs.readFileSync("./PATH_TO_IMAGE");
 
-```javascript
-const fs = require('fs');
-
-const imageBuffer = fs.readFileSync('path/to/your/image.jpg');
-
-// Print the image with default size (100% width and height)
-terimage.image(imageBuffer)
-  .then((result) => console.log(result));
-
-// Print the image with a specific width (50%) and scaled height
-terimage.image(imageBuffer, { width: '50%' })
-  .then((result) => console.log(result));
-
+terimage.image(image).then((result) => {
+    console.log(result);
+});
 ```
 
 Options:
@@ -62,3 +48,7 @@ Feel free to submit a pull request if you have any improvements or bug fixes.
 ### License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+### Note
+
+>  This project is still in its early stages, and there are many improvements to be made. Feel free to contribute or provide feedback.

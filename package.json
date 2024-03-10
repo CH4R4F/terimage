@@ -1,7 +1,7 @@
 {
     "name": "terimage",
     "version": "1.0.0",
-    "main": "./build/index.js",
+    "main": "./dist/index.js",
     "license": "MIT",
     "description": "a Node.js tool that allows you to convert and display images directly within your terminal window",
     "keywords": [

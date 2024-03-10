@@ -8,7 +8,7 @@ type Options = {
 };
 
 class Terimage {
-    readonly options: Options = {
+    private readonly options: Options = {
         width: '100%',
         height: '100%',
     };
