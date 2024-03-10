@@ -3,8 +3,8 @@ import Jimp from 'jimp';
 import { DEFAULT_TERMINAL_WIDTH, DEFAULT_TERMINAL_HEIGHT } from './constants';
 
 type Options = {
-    width: number | string;
-    height: number | string;
+    width?: number | string;
+    height?: number | string;
 };
 
 class Terimage {
