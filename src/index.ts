@@ -1,10 +1,3 @@
-import Terimage from './Terimage';
-import fs from 'fs';
-import path from 'path';
+import Terimage from "./Terimage";
 
-const terImage = new Terimage();
-const image = fs.readFileSync(path.join(__dirname, 'images/cat.jpg'));
-
-(async () => {
-    console.log(await terImage.image(image));
-})();
+export default Terimage;
