@@ -1,19 +1,27 @@
-import fs, { promises as fsPromises } from 'fs';
 import chalk from 'chalk';
 import Jimp from 'jimp';
 import { DEFAULT_TERMINAL_WIDTH, DEFAULT_TERMINAL_HEIGHT } from './constants';
 
+type Options = {
+    width: number | string;
+    height: number | string;
+};
+
 class Terimage {
-    private options: any;
+    readonly options: Options = {
+        width: '100%',
+        height: '100%',
+    };
 
-    constructor() {}
+    async image(buffer: Buffer, options = this.options) {
+        if (!options.width || !options.height) {
+            options = this.options;
+        }
 
-    async image(buffer: Buffer, options: any) {
-        // this.options = options;
         return await this._renderImage(buffer, options);
     }
 
-    private async _renderImage(buffer: Buffer, options: any) {
+    private async _renderImage(buffer: Buffer, options: Options) {
         const image = await Jimp.read(buffer);
         const { bitmap } = image;
         const { width, height } = await this._calculateImageSize(bitmap.width, bitmap.height, options);
@@ -34,7 +42,7 @@ class Terimage {
         return result;
     }
 
-    private async _calculateImageSize(imgWidth: number, imgHeight: number, options: any) {
+    private async _calculateImageSize(imgWidth: number, imgHeight: number, options: Options) {
         const terminalSize = this._getTerminalSize();
         let width: number;
         let height: number;

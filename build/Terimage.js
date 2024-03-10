@@ -16,10 +16,14 @@ const chalk_1 = __importDefault(require("chalk"));
 const jimp_1 = __importDefault(require("jimp"));
 const constants_1 = require("./constants");
 class Terimage {
-    constructor() { }
-    image(buffer, options) {
-        return __awaiter(this, void 0, void 0, function* () {
-            // this.options = options;
+    constructor() {
+        this.options = {
+            width: '100%',
+            height: '100%',
+        };
+    }
+    image(buffer_1) {
+        return __awaiter(this, arguments, void 0, function* (buffer, options = this.options) {
             return yield this._renderImage(buffer, options);
         });
     }

@@ -18,5 +18,5 @@ const path_1 = __importDefault(require("path"));
 const terImage = new Terimage_1.default();
 const image = fs_1.default.readFileSync(path_1.default.join(__dirname, 'images/cat.jpg'));
 (() => __awaiter(void 0, void 0, void 0, function* () {
-    console.log(yield terImage.image(image, { width: '50%', height: '50%' }));
+    console.log(yield terImage.image(image));
 }))();
