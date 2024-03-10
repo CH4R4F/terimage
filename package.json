@@ -33,5 +33,9 @@
     "dependencies": {
         "chalk": "4.1.2",
         "jimp": "^0.22.12"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/CH4R4F/terimage/"
     }
 }
